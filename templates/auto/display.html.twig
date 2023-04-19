@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h1>{{ opdracht }}</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nummer</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>prijs</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for auto in autos %}
+                <tr>
+                    <td>{{ auto.id}}</td>
+                    <td>{{  auto.model}}</td>
+                    <td>{{ auto.type }}</td>
+                    <td>{{ auto.prijs }}</td>
+                    <td><a href="#">details</a></td>
+                    <td><a href="#">update</a></td>
+                    <td><a href="#">delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/insert">insert</a>
+    </div>
+{% endblock %}
